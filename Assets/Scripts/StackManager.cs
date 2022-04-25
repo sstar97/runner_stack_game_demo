@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StackManager : MonoBehaviour
 {
@@ -112,6 +113,7 @@ public class StackManager : MonoBehaviour
         {
             other.tag = "Untagged";
             PlayerPrefs.SetInt("point", point + (stackCount * 10));
+            PlayerPrefs.SetInt("lastLevel", SceneManager.GetActiveScene().buildIndex);
             txt.text = (point + (stackCount * 10)).ToString();
             txt2.text = (point + (stackCount * 10)).ToString();
             finishPanel.SetActive(true);
